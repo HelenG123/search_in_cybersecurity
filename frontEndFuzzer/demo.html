@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head> 
         <title> LilFuzz </title>
-        <link rel="icon" href="monkey_logo.png">
         <link href="https://fonts.googleapis.com/css?family=Arimo|Poppins" rel="stylesheet">
         <style>
+            /* TODO: Change theme and add monkey branding */
             body {
                 text-align: center;
-                background-color:beige; 
-                color: #622300;
+                background-color: black; 
+                color: white; 
                 font-family: 'Poppins', sans-serif;
-                background-image: url("https://www.froehlichundfrei.de/static/individual-loesungen.299b8a0b.png");
-                background-size: 50%;
-                background-repeat: no-repeat;
             }
 
             h1 {
-                text-align: right;
                 font-size: 200px;
-                margin: 100px;
-                
+                margin-bottom: -20px; 
+                padding-bottom: 0px;
+                /* vertical-align: center; */
             }
 
-            nav {
-                text-align: right;
-                margin-top: -150px;
-                padding-right: 130px;
-            }
 
+            h1:hover {
+                transition: 0.3s;
+                color: darkgreen;
+            }
+            
             a {
-                color: #AB5615;
+                color: white;
                 text-decoration: none;
                 font-size: 50px;
                 padding: 15px;
@@ -37,7 +34,11 @@
 
             a:hover {
                 transition: 0.5s;
-                color: black;
+                font-size: 60px;
+            }
+
+            demo {
+                color: darkgreen;
             }
 
             p {
@@ -51,8 +52,8 @@
         <h1>LilFuzz</h1> 
 
         <nav>
-            <a href="home.html">Home</a>
-            <a href="demo.html">Demo</a>
+            <a href="/home.html">Home</a>
+            <a class="demo" href="/demo.html">Demo</a>
             <a href="/diy.html"> Try it!</a>
         </nav> 
 
