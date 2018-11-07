@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title> LilFuzz </title>
+        <link rel="icon" href="monkey_logo.png">
+        <link href="https://fonts.googleapis.com/css?family=Arimo|Poppins" rel="stylesheet">
+        <script type="text/javascript" src=".js"> </script>
+        <style>
+            * {
+                text-align: center;
+                color: #622300;
+                background-color:white;
+                font-family: 'Poppins', sans-serif;
+                box-sizing: border-box;
+                position: relative;
+            }
+
+            h1 {
+                padding-top: 50px;
+                vertical-align: middle;
+                font-size: 60px;
+                margin-bottom: -20px;
+            }
+
+            h2 {
+                margin-bottom: 0px;
+            }
+
+            input[type=text] {
+                    width: 360px;
+                    font-size: 20px;
+                    text-align: center;
+                    border-radius: 6px;
+                    color: #622300;
+                    font-family: 'Poppins', sans-serif;
+
+            }
+
+            input[type=submit] {
+                    margin-top: 10px;
+                    font-size: 25px;
+                    text-align: center;
+                    border-radius: 6px;
+                    color: #622300;
+                    font-family: 'Poppins', sans-serif;
+                    background-color: lightgray;
+
+            }
+
+            input[type=submit]:hover {
+                    transition: 0.5s;
+                    color: black;
+            }
+
+    
+        </style>
+    </head>
+    <body>
+        <script>
+            var horde = gremlins.createHorde();
+            horde.unleash();
+        </script> 
+        <h1>Sample Website</h1>
+        <h2>Testing Randomized Inputs</h2>
+        <form>
+            <input class="text-input" type="text"/> <br/>
+            <input type="radio" name="group" /> First Filter
+            <input type="radio" name="group" /> Second Filter <br/>
+            <input type="submit" value="Submit" />
+        </form>
+
+
+
+        
+    </body>
+</html>
