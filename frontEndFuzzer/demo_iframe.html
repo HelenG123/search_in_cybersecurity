@@ -4,7 +4,8 @@
         <title> LilFuzz </title>
         <link rel="icon" href="monkey_logo.png">
         <link href="https://fonts.googleapis.com/css?family=Arimo|Poppins" rel="stylesheet">
-        <script type="text/javascript" src=".js"> </script>
+        <script type="text/javascript" src="demo_iframe.js"> </script>
+        <script src="gremlins.min.js"></script>
         <style>
             * {
                 text-align: center;
@@ -55,17 +56,17 @@
     
         </style>
     </head>
-    <body>
+
+    <body> 
         <script>
-            var horde = gremlins.createHorde();
-            horde.unleash();
-        </script> 
+                gremlins.createHorde().unleash();
+        </script>
         <h1>Sample Website</h1>
         <h2>Testing Randomized Inputs</h2>
         <form>
             <input class="text-input" type="text"/> <br/>
-            <input type="radio" name="group" /> First Filter
-            <input type="radio" name="group" /> Second Filter <br/>
+            <input class="radio_button" type="radio" name="group" /> First Filter
+            <input class="radio_button" type="radio" name="group" /> Second Filter <br/>
             <input type="submit" value="Submit" />
         </form>
 
