@@ -25,10 +25,31 @@ function generateRandomNum() {
     return randomNum; 
 }
 
-function refreshPage() 
-    // After a crash has been found and it has 
-    // TODO: displayed the error message, display a button to refresh page. 
-    location.reload(); 
+function refreshPage() {
+    // After a crash has been found, display a button that
+    // triggers a page to refresh. 
+    location.reload();
+}
+
+function testForBrokenLinks() {
+    // Collect all links on the web page/document
+    var links = document.getElementsByTagName('a');
+
+    // Check to see if links are broken and return a 404 status code
+    for (var i = 0; i < links.length; i++) {
+        fetch(links[i].href)
+            .then(function(response) {
+                console.log(response.status);
+                if (response.status == 400) {
+                    console.log("Broken!")
+                }
+                else {
+                    console.log("Probably working...");
+                }
+            });
+    }
+
+
 }
 
 // FOR TESTING: 
