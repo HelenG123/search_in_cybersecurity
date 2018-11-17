@@ -31,7 +31,15 @@ function refreshPage() {
     location.reload();
 }
 
+function randomClick() {
+    // Randomly select a part of the DOM, then click
+    // Reference: https://www.w3schools.com/jsref/met_html_click.asp 
+
+    // document.getElementByTagName(getRandom()) ??? 
+}
+
 function testForBrokenLinks() {
+    // INCOMPLETE!!
     // Collect all links on the web page/document
     var links = document.getElementsByTagName('a');
 
@@ -51,6 +59,7 @@ function testForBrokenLinks() {
 
 
 }
+
 
 // FOR TESTING: 
 // console.log(randomizeInput());
