@@ -15,6 +15,7 @@
                 background-repeat: no-repeat; */
                 /* background-position: lef */
                 /* background-position-y: 10px;  */
+                /* box-sizing: border-box */
                 
             }
 
@@ -25,6 +26,11 @@
                 margin-top: -20px;
             }
 
+            h2 {
+                font-size: 60px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
             nav {
                 /* text-align: right; */
                 margin-top: -100px;
@@ -59,6 +65,12 @@
                 border-radius: 6px;
             }
 
+            .column {
+                float: left; 
+                width: 50%;  
+            }
+
+
 
         </style>
     </head>
@@ -70,7 +82,18 @@
             <a href="try.html"> Try it!</a>
         </nav> 
 
-        <iframe src="demo_iframe.html"></iframe>
+        <!-- Create a two column layout -->
+        <div class="container">
+            <div class="column">
+                <h2>GREMLIN.JS</h2> 
+                <iframe src="demo_iframe.html"></iframe>
+            </div>
+            <div class="column">
+                <h2>LILFUZZ</h2> 
+                <iframe src="demo_iframe.html"></iframe>
+            </div>
+        </div>
+        
         
         
     </body>
