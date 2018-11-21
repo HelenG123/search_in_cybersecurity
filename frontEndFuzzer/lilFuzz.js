@@ -81,3 +81,14 @@ async function testForBrokenLinks() {
         
     }
 }
+
+function testForSQLInjection(userInput) {
+    // Inject a SQL statement that will always evaluate to true
+    sqlStatement = "0 or 1=1";
+    userInput = userInput + sqlStatement;
+
+    action = "<script type='text/javascript'> window.location.href='www.google.com'; </script>"; 
+
+    return userInput, action;
+
+}
