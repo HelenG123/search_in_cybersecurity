@@ -47,8 +47,15 @@ function randomDropDownSelect() {
 
 }
 
-function randomButtonClick() {
-
+function collectAllButtons() {
+    var buttons = document.getElementsByTagName('input');
+    var radioButtons = [];
+    for (var i = 0; i < buttons.length; i++) {
+        if (buttons[i].type == "radio") {
+            radioButtons.push(buttons[i]);
+        }
+    }
+    console.log("RADIO BUTTONS", radioButtons);
 }
 
 async function testForBrokenLinks() {
@@ -74,7 +81,3 @@ async function testForBrokenLinks() {
         
     }
 }
-
-
-// FOR TESTING: 
-// console.log(randomizeInput());
