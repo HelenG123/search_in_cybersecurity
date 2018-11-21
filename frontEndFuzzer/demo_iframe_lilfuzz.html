@@ -58,13 +58,7 @@
     </head>
 
     <body> 
-        <script>
-            var randInput = randomizeInput(); 
-            console.log(randInput);
-            document.getElementsByClassName("text-input").value = randInput; 
-
-                
-        </script>
+    
         <h1>Sample Website</h1>
         <h2>Testing Randomized Inputs</h2>
         <form>
@@ -73,6 +67,40 @@
             <input class="radio_button" type="radio" name="group" /> Second Filter <br/>
             <input type="submit" value="Submit" />
         </form>
+
+        <nav>
+            <a href="http://www.itsecgames.com/">Test Link 1&nbsp;</a>
+            <!-- <a href="demo.html">Test Link 2&nbsp;</a>
+            <a href="try.html">Test Link 3</a> -->
+        </nav> 
+
+        <script>
+            var randInput = randomizeInput(); 
+            console.log("RANDOM INPUT:", randInput);
+            // console.log(document.getElementsByClassName("text-input"));
+            // document.getElementsByClassName("text-input").value = randInput; 
+           
+            async function displayBrokenLinks() {
+                var brokenLinks = await testForBrokenLinks();
+                if (brokenLinks.length == 0) {
+                    console.log("No broken links!");
+                }
+                else {
+                    console.log("Broken Links:", brokenLinks);
+                } 
+            }
+            
+            displayBrokenLinks();
+            // testForBrokenLinks();
+            // console.log("hello");
+            // if (brokenLinks.length == 0) {
+            // console.log("No broken links!");
+            // }
+            // else {
+            // console.log("Broken Links:", brokenLinks);
+            // }     
+
+        </script>
 
 
 

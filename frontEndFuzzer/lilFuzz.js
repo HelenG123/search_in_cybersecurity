@@ -26,6 +26,7 @@ function generateRandomNum() {
 }
 
 function refreshPage() {
+    // TODO: Delete when transferred to React or a diff environment.
     // After a crash has been found, display a button that
     // triggers a page to refresh. 
     location.reload();
@@ -38,26 +39,40 @@ function randomClick() {
     // document.getElementByTagName(getRandom()) ??? 
 }
 
-function testForBrokenLinks() {
-    // INCOMPLETE!!
+function randomItemFrom(inputArr) {
+    return inputArr[Math.floor(Math.random() * inputArr.length)];
+}
+
+function randomDropDownSelect() {
+
+}
+
+function randomButtonClick() {
+
+}
+
+async function testForBrokenLinks() {
     // Collect all links on the web page/document
     var links = document.getElementsByTagName('a');
+    console.log(links);
+    brokenLinks = [];
 
     // Check to see if links are broken and return a 404 status code
     for (var i = 0; i < links.length; i++) {
-        fetch(links[i].href)
+        fetch(links[i].href, {mode: 'no-cors'})
             .then(function(response) {
-                console.log(response.status);
+                // console.log(response.status);
                 if (response.status == 400) {
-                    console.log("Broken!")
+                    console.log("Broken!");
+                    brokenLinks.append(links[i].href);
                 }
                 else {
-                    console.log("Probably working...");
+                    // console.log("Probably working...");
                 }
             });
+        return brokenLinks;
+        
     }
-
-
 }
 
 
