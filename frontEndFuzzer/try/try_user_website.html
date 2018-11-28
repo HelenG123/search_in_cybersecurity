@@ -2,9 +2,8 @@
 <html lang="en">
     <head> 
         <title> LilFuzz </title>
-        <link rel="icon" href="monkey_logo.png">
+        <link rel="icon" href="../monkey_logo.png">
         <link href="https://fonts.googleapis.com/css?family=Arimo|Poppins" rel="stylesheet">
-        <script src="gremlins.min.js"></script>
 
         <style>
             body {
@@ -65,11 +64,7 @@
         </style>
     </head>
     <body>
-        <!-- <script>
-                function unleashGremlins() {
-                    gremlins.createHorde().unleash();
-                }
-        </script> -->
+    
         <h1>LilFuzz</h1> 
         <nav>
             <a href="../index.html">Home &nbsp; </a>
@@ -78,7 +73,22 @@
         </nav> 
 
         <!-- Display the user's website in an iframe -->
-        <iframe src="..."></iframe>
+        <iframe id="user_website" src="try_again.html"></iframe>
+
+
+        <script type="text/javascript">
+            var query_from_url = document.location.search;
+            query_from_url = query_from_url.split("=");
+            var user_website = query_from_url[1];
+            // Check if it's a website or a local HTML file
+            if (user_website.slice(0, 3) == "www") {
+                document.getElementById("user_website").src = "https://" + user_website;
+            }
+            else {
+                document.getElementById("user_website").src = user_website;
+            }
+
+        </script>
                 
        
 
