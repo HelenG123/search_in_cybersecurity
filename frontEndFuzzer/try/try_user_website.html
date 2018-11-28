@@ -73,7 +73,7 @@
         </nav> 
 
         <!-- Display the user's website in an iframe -->
-        <iframe id="user_website" src="try_again.html"></iframe>
+        <iframe target="_blank" id="user_website" src="try_again.html"></iframe>
 
 
         <script type="text/javascript">
@@ -81,6 +81,8 @@
             query_from_url = query_from_url.split("=");
             var user_website = query_from_url[1];
             // Check if it's a website or a local HTML file
+
+           console.log(user_website);
             if (user_website.slice(0, 3) == "www") {
                 document.getElementById("user_website").src = "https://" + user_website;
             }
