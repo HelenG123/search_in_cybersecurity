@@ -92,8 +92,9 @@
 
         <section class="submission">
             <!-- <h2>Website Link</h2>  -->
-            <form method="POST" action="try_user_website.html">
-                <input type="text" id="user_website" 
+            <!-- Reference: https://stackoverflow.com/questions/14693758/passing-form-data-to-another-html-page -->
+            <form method="GET" action="try_user_website.html">
+                <input type="text" id="user_website" name="website"
                        placeholder="Paste your website link here."/> <br>
                 <input type="submit" value="Submit" id="user_submit_website"/>
             </form>

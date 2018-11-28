@@ -4,29 +4,35 @@
         <title> LilFuzz </title>
         <link rel="icon" href="monkey_logo.png">
         <link href="https://fonts.googleapis.com/css?family=Arimo|Poppins" rel="stylesheet">
+        <script src="gremlins.min.js"></script>
+
         <style>
             body {
                 text-align: center;
                 background-color:beige; 
                 color: #622300;
                 font-family: 'Poppins', sans-serif;
-                background-image: url("https://www.froehlichundfrei.de/static/individual-loesungen.299b8a0b.png");
-                background-size: 50%;
-                background-repeat: no-repeat;
-            }
-
-            h1 {
-                text-align: right;
-                font-size: 200px;
-                margin: 100px;
                 
             }
 
-            nav {
-                text-align: right;
-                margin-top: -150px;
-                padding-right: 130px;
+            h1 {
+                /* text-align: right; */
+                font-size: 100px;
+                /* margin: 100px; */
+                margin-top: -20px;
             }
+
+            h2 {
+                font-size: 60px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+            nav {
+                /* text-align: right; */
+                margin-top: -100px;
+                /* padding-right: 130px;  */
+            }
+
 
             a {
                 color: #AB5615;
@@ -40,65 +46,44 @@
                 color: black;
             }
 
-            .try {
+            .demo {
+                /* OPTIONAL: To show that Demo was selected */
                 font-weight: bold;
-            }
-
-            .submission {
-                float: right;
-                padding-right: 200px;
-                padding-top: 10px;
-            }
-
-            input[type=text] {
-                width: 360px;
-                font-size: 25px;
-                text-align: center;
-                border-radius: 6px;
-                color: #622300;
-                font-family: 'Poppins', sans-serif;
-
-            }
-
-            input[type=submit] {
-                margin-top: 10px;
-                font-size: 25px;
-                text-align: center;
-                border-radius: 6px;
-                color: #622300;
-                font-family: 'Poppins', sans-serif;
-
-            }
-
-            input[type=submit]:hover {
-                transition: 0.5s;
-                color: black;
             }
 
             p {
                 font-size: 30px;
             }
 
+            iframe {
+                width: 100%;
+                height: 450px;
+                border-radius: 6px;
+            }
+
 
         </style>
     </head>
     <body>
-        <h1>LilFuzz</h1>
+        <!-- <script>
+                function unleashGremlins() {
+                    gremlins.createHorde().unleash();
+                }
+        </script> -->
+        <h1>LilFuzz</h1> 
         <nav>
-            <a href="../index.html">Home</a>
-            <a href="../demo/demo.html">Demo</a>
-            <a class="try" href="try.html"> Try it!</a>
+            <a href="../index.html">Home &nbsp; </a>
+            <a class="demo" href="../demo/demo.html">Demo &nbsp; </a>
+            <a href="../try/try.html"> Try it!</a>
         </nav> 
 
-        <section class="submission">
-            <!-- <h2>Website Link</h2>  -->
-            <form>
-                <input type="text" id="user_website" 
-                       placeholder="Paste your website link here."/> <br>
-                <input type="submit" value="Submit"/>
-            </form>
-        </section>
+        <!-- Display the user's website in an iframe -->
+        <iframe src="..."></iframe>
+                
+       
 
+        
+        
         
     </body>
 </html>
