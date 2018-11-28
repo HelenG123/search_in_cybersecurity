@@ -4,6 +4,12 @@
         <title> LilFuzz </title>
         <link rel="icon" href="monkey_logo.png">
         <link href="https://fonts.googleapis.com/css?family=Arimo|Poppins" rel="stylesheet">
+        <script src="gremlins.min.js"></script>
+        
+        <!-- Load React. -->
+        <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
         <style>
             body {
                 text-align: center;
@@ -69,6 +75,11 @@
         </style>
     </head>
     <body>
+        <!-- <script>
+                function unleashGremlins() {
+                    gremlins.createHorde().unleash();
+                }
+        </script> -->
         <h1>LilFuzz</h1> 
         <nav>
             <a href="index.html">Home &nbsp; </a>
@@ -78,15 +89,25 @@
 
         <!-- Create a two column layout -->
         <div class="container">
-            <div class="column">
+            <div class="column" id="gremlin_iframe">
                 <h2>GREMLIN.JS</h2> 
                 <iframe src="demo_iframe_gremlin.html"></iframe>
+                <!-- <iframe id="gremlin_iframe" src="https://react-redux-registration-login-example.stackblitz.io/login"></iframe> -->
             </div>
             <div class="column">
                 <h2>LILFUZZ</h2> 
                 <iframe src="demo_iframe_lilfuzz.html"></iframe>
             </div>
         </div>
+<!-- 
+        <script>
+            // Apply gremlins.js to first iframe
+            var gremlin_iframe = document.getElementById("gremlin_iframe").contentWindow;
+            gremlin_iframe.unleashGremlins = function() {
+                gremlins.createHorde().unleash();
+            }
+        
+        </script> -->
         
         
         
