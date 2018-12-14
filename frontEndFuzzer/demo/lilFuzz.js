@@ -43,19 +43,45 @@ function randomItemFrom(inputArr) {
     return inputArr[Math.floor(Math.random() * inputArr.length)];
 }
 
+function generateHexCode() {
+    // Generate a random hex code 
+    // Reference: https://stackoverflow.com/questions/20553036/random-color-in-jquery
+    var rand = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' ];
+    var color = '#' + rand[Math.ceil(Math.random() * 15)] + 
+        rand[Math.ceil(Math.random() * 15)] + 
+        rand[Math.ceil(Math.random() * 15)] + 
+        rand[Math.ceil(Math.random() * 15)] + 
+        rand[Math.ceil(Math.random() * 15)] + 
+        rand[Math.ceil(Math.random() * 15)];
+    return color; 
+}
+
 function randomDropDownSelect() {
     // TODO
 }
 
-function collectAllButtons() {
+function collectAllButtons(buttonType) {
     var buttons = document.getElementsByTagName('input');
-    var radioButtons = [];
-    for (var i = 0; i < buttons.length; i++) {
-        if (buttons[i].type == "radio") {
-            radioButtons.push(buttons[i]);
+    console.log(buttons);
+    if (buttonType == "classic") {
+        var classicButtons = [];
+        for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].type == "button") {
+                classicButtons.push(buttons[i]);
+            }
         }
+        return classicButtons;
     }
-    console.log("RADIO BUTTONS", radioButtons);
+    if (buttonType == "radio") {
+        var radioButtons = [];
+        for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].type == "radio") {
+                radioButtons.push(buttons[i]);
+            }
+        }
+        return radioButtons;
+    }
+    
 }
 
 async function testForBrokenLinks() {
@@ -92,3 +118,5 @@ function testForSQLInjection(userInput) {
     return userInput, action;
 
 }
+
+

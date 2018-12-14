@@ -39,7 +39,7 @@
 
             }
 
-            input[type=submit] {
+            button {
                     margin-top: 10px;
                     font-size: 25px;
                     text-align: center;
@@ -64,10 +64,10 @@
         <h1>Sample Website</h1>
         <h2>Visualizing the Fuzzer Experience</h2>
         <form>
-            <input class="text-input" id="inputField" type="text" value="Placeholder"/> <br/>
-            <input class="radio_button" type="radio" name="group" /> First Filter
-            <input class="radio_button" type="radio" name="group" /> Second Filter <br/>
-            <input type="submit" value="Submit" />
+            <input class="text_input" id="inputField" type="text" value="Placeholder"/> <br/>
+            <input class="first_button" type="radio" name="group" /> First Filter
+            <input class="second_button" type="radio" name="group" /> Second Filter <br/>
+            <button class = "change_colour" type="button"> Change Colour </button>
         </form>
 
 
@@ -82,6 +82,14 @@
 
             $(document).ready(function(){
                 randTextInput(); 
+                randRadioButton();
+                randClassicButton();
+
+                $("button").click(function(buttonType) {
+                    console.log(buttonType.target);
+                    randColour();
+                    // return true;
+                })
               
             });
 
@@ -94,38 +102,50 @@
                 if(runRandomInput){
                     var newPlaceholder = randomizeInput();
                     n++;
-                    $('input.text-input').attr('value',newPlaceholder);
+                    $('input.text_input').attr('value',newPlaceholder);
                 }
                 },2000);
             }
 
             function randRadioButton() {
                 // RANDOMIZE RADIO BUTTONS SELECTION
+                var radioButtons = collectAllButtons("radio");
+                var runRadioSelect = true;
+                
+                setInterval(function() {
+                    if (runRadioSelect) {
+                        var currRadioButton = randomItemFrom(radioButtons);
+                        $(currRadioButton).prop('checked', true);
+                    }
+                
+                },1000);
             }
 
-            // ----------------------------------------------
-            // var randInput = randomizeInput();
-            // var randNum = generateRandomNum(); 
-            
-            // console.log(document.getElementsByClassName("text-input"));
-            // document.getElementsByClassName("text-input").value = randInput; 
-           
-            // async function displayBrokenLinks() {
-            //     var brokenLinks = await testForBrokenLinks();
-            //     if (brokenLinks.length == 0) {
-            //         console.log("No broken links!");
-            //     }
-            //     else {
-            //         console.log("Broken Links:", brokenLinks);
-            //     } 
-            // }
+            function randClassicButton() {
+                var classicButtons = collectAllButtons("classic");
+                // console.log(classicButtons);
+            }
+            function randColour() {
+                // WHEN THE BUTTON IS CLICKED, CHANGE BUTTON COLOUR
+                var currColour = generateHexCode();
+                var changeColour = true;
 
-            // SOME OF THE FUNCTIONS FROM lilFuzz.js 
-            // displayBrokenLinks();
-            // collectAllButtons();
-            // console.log("RANDOM INPUT:", randInput);
-            // console.log("RANDOM NUM:", randNum);
-            // randomButtonClick();    
+                // var currColour = generateHexCode();
+                $("button").css({
+                    'background-color' : currColour,
+                });
+
+                // Automate the colour change
+                    // setInterval(function() {
+                    //     if (changeColour) {
+                    //         var currColour = generateHexCode();
+                    //         $("button").css({
+                    //             'background-color' : currColour,
+                    //         });
+                    //     }
+                    // });
+            }
+ 
 
         </script>
 </html>
