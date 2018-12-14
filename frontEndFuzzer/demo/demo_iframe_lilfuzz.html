@@ -4,6 +4,8 @@
         <title> LilFuzz </title>
         <link rel="icon" href="../monkey_logo.png">
         <link href="https://fonts.googleapis.com/css?family=Arimo|Poppins" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        
         <script type="text/javascript" src="demo_iframe.js"> </script>
         <script src="lilFuzz.js"></script>
         <style>
@@ -60,7 +62,7 @@
     <body> 
     
         <h1>Sample Website</h1>
-        <h2>Testing Randomized Inputs</h2>
+        <h2>Visualizing the Fuzzer Experience</h2>
         <form>
             <input class="text-input" id="inputField" type="text" value="Placeholder"/> <br/>
             <input class="radio_button" type="radio" name="group" /> First Filter
@@ -68,40 +70,62 @@
             <input type="submit" value="Submit" />
         </form>
 
-        <nav>
-            <a href="http://www.itsecgames.com/">Test Link 1&nbsp;</a>
-            <!-- <a href="demo.html">Test Link 2&nbsp;</a>
-            <a href="try.html">Test Link 3</a> -->
-        </nav> 
 
-        <script>
-            var randInput = randomizeInput();
-            var randNum = generateRandomNum(); 
-            
-            // console.log(document.getElementsByClassName("text-input"));
-            // document.getElementsByClassName("text-input").value = randInput; 
-           
-            async function displayBrokenLinks() {
-                var brokenLinks = await testForBrokenLinks();
-                if (brokenLinks.length == 0) {
-                    console.log("No broken links!");
-                }
-                else {
-                    console.log("Broken Links:", brokenLinks);
-                } 
-            }
-
-            // SOME OF THE FUNCTIONS FROM lilFuzz.js 
-            displayBrokenLinks();
-            collectAllButtons();
-            console.log("RANDOM INPUT:", randInput);
-            console.log("RANDOM NUM:", randNum);
-            // randomButtonClick();    
-
-        </script>
+        
 
 
 
         
     </body>
+
+    <script>
+
+            $(document).ready(function(){
+                randTextInput(); 
+              
+            });
+
+            function randTextInput() {
+                // RANDOMIZE TEXT FIELD INPUT 
+                var n=0;
+                var runRandomInput = true;
+
+                setInterval(function(){
+                if(runRandomInput){
+                    var newPlaceholder = randomizeInput();
+                    n++;
+                    $('input.text-input').attr('value',newPlaceholder);
+                }
+                },2000);
+            }
+
+            function randRadioButton() {
+                // RANDOMIZE RADIO BUTTONS SELECTION
+            }
+
+            // ----------------------------------------------
+            // var randInput = randomizeInput();
+            // var randNum = generateRandomNum(); 
+            
+            // console.log(document.getElementsByClassName("text-input"));
+            // document.getElementsByClassName("text-input").value = randInput; 
+           
+            // async function displayBrokenLinks() {
+            //     var brokenLinks = await testForBrokenLinks();
+            //     if (brokenLinks.length == 0) {
+            //         console.log("No broken links!");
+            //     }
+            //     else {
+            //         console.log("Broken Links:", brokenLinks);
+            //     } 
+            // }
+
+            // SOME OF THE FUNCTIONS FROM lilFuzz.js 
+            // displayBrokenLinks();
+            // collectAllButtons();
+            // console.log("RANDOM INPUT:", randInput);
+            // console.log("RANDOM NUM:", randNum);
+            // randomButtonClick();    
+
+        </script>
 </html>
