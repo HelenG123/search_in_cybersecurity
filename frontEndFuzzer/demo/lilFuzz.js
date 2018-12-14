@@ -11,7 +11,7 @@ function randomizeInput() {
     // Initialize the random input as an empty string
     randInput = ""; 
 
-    // Choose a random character with length of lenOfInput
+    // Choose a random character with length == lenOfInput
     for (var i = 0; i < lenOfInput; i++) {
         randInput += characters.charAt(Math.floor(Math.random() * characters.length));
     } 

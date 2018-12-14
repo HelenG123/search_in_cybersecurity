@@ -2,8 +2,9 @@
 <html lang="en">
     <head> 
         <title> LilFuzz </title>
-        <link rel="icon" href="../monkey_logo.png">
+        <link rel="icon" href="monkey_logo.png">
         <link href="https://fonts.googleapis.com/css?family=Arimo|Poppins" rel="stylesheet">
+        <script src="gremlins.min.js"></script>
 
         <style>
             body {
@@ -45,55 +46,58 @@
                 color: black;
             }
 
-            .try_it {
+            .about {
                 /* OPTIONAL: To show that Demo was selected */
                 font-weight: bold;
             }
 
             p {
                 font-size: 30px;
+                font-style: italic;
             }
 
             iframe {
                 width: 100%;
                 height: 450px;
                 border-radius: 6px;
+                background-color: white;
             }
+
+            .more_info {
+                font-size: 30px;
+            }
+
+
 
 
         </style>
     </head>
     <body>
     
-        <h1>LilFuzz</h1> 
+        <h1>LilFuzz</h1>
         <nav>
-            <a href="../index.html">Home &nbsp; </a>
-            <a class="about" href="../about.html">About&nbsp;</a>
-            <a class="demo" href="../demo/demo.html">Demo &nbsp; </a>
-            <a class = "try_it" href="../try/try.html"> Try it!</a>
+            <a href="index.html">Home &nbsp; </a>
+            <a class="about" href="about.html">About&nbsp;</a>
+            <a class="demo" href="demo/demo.html">Demo &nbsp; </a>
+            <a href="try/try.html"> Try it!</a>
         </nav> 
 
-        <!-- Display the user's website in an iframe -->
-        <iframe target="_blank" id="user_website" src="try_again.html"></iframe>
+        <p> 
+            "When developing software, building a reliable and robust user interface (UI) that is
+             not susceptible to system crashes is a key objective. However, testing and handling 
+             all the possible user interactions and inputs can be difficult to do, especially 
+             when it is not automated. An effective and popular automated quality assurance test 
+             used for detecting coding errors and vulnerabilities with random input is fuzz testing. 
+             In this paper, I discuss my methodology in creating and visualizing my own fuzzer, LilFuzz."
+        </p>
 
-<!-- 
-        <script type="text/javascript">
-            var query_from_url = document.location.search;
-            query_from_url = query_from_url.split("=");
-            var user_website = query_from_url[1];
-            // Check if it's a website or a local HTML file
+        <h2> Interested in LilFuzz? </h2>
+        <a class = "more_info" href="https://drive.google.com/open?id=1wVI7fgLj_rjAdESTUUNN6cVL_A0uV3I8"> Read more about it! </a>
+        <a class = "more_info" href="https://github.com/helensIndividualSchoolProjects/searchInCybersecurity"> Source Code </a>
 
-           console.log(user_website);
-            if (user_website.slice(0, 3) == "www") {
-                document.getElementById("user_website").src = "https://" + user_website;
-            }
-            else {
-                document.getElementById("user_website").src = user_website;
-            }
 
-        </script>
-                 -->
-       
+        <h2> Resources </h2> 
+        <h3> Coming soon... </h3>
 
         
         
