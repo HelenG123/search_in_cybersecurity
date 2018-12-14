@@ -28,7 +28,7 @@ class LikeButton extends React.Component {
           <input type="submit" defaultValue="Submit" />
         </form>
         <nav>
-          <a href="http://www.itsecgames.com/">Test Link 1&nbsp;</a>
+          {/* <a href="http://www.itsecgames.com/">Test Link 1&nbsp;</a> */}
           {/* <a href="demo.html">Test Link 2&nbsp;</a>
             <a href="try.html">Test Link 3</a> */}
         </nav> 
