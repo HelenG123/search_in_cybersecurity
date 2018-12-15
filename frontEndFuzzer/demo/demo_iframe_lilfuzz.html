@@ -8,7 +8,7 @@
         <script type="text/javascript" src="demo_iframe.js"> </script>
         <script src="lilFuzz.js"></script>
         <style>
-            * {
+            body {
                 text-align: center;
                 color: #622300;
                 background-color:white;
@@ -58,20 +58,23 @@
         </style>
     </head>
 
-    <body> 
+    <body id ="whole"> 
         <h1>Sample Website</h1>
         <h2>Visualizing the Fuzzer Experience</h2>
         <form>
             <input class="text_input" id="inputField" type="text" value="Placeholder"/> <br/>
             <input class="first_button" type="radio" name="group" /> First Filter
             <input class="second_button" type="radio" name="group" /> Second Filter <br/>
-            <button class = "change_colour" type="button"> Change Colour </button>
+            <div>
+                    <button class = "change_colour" type="button"> Change Colour </button>
+            </div>
+            
         </form>
  
     </body>
 
     <script>
-        
+
         // VISUALIZE THE FUZZING 
         $(document).ready(function(){
             randTextInput(); 
@@ -79,7 +82,7 @@
             randClassicButton();
 
             
-            $("button").click(function(buttonType) {
+            $("div").click(function(buttonType) {
                 // console.log(buttonType.target);
                 randColour();
             })
@@ -123,10 +126,7 @@
             var currColour = generateHexCode();
             var changeColour = true;
 
-            // var currColour = generateHexCode();
-            $("button").css({
-                'background-color' : currColour,
-            });
+            $('body').css("background-color", currColour);
 
             // Automate the colour change
                 // setInterval(function() {

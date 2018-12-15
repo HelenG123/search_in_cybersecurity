@@ -42,7 +42,10 @@ function randomClick() {
     // document.getElementByTagName(getRandom()) ??? 
 }
 
-function randomItemFrom(inputArr) {
+function randomItemFromArr(inputArr) {
+    // Returns a random integer value (index) that is within 
+    // the range of inputArr. 
+
     return inputArr[Math.floor(Math.random() * inputArr.length)];
 }
 
