@@ -81,12 +81,12 @@
     <script>
 
             $(document).ready(function(){
-                // randTextInput(); 
+                randTextInput(); 
                 randRadioButton();
                 randClassicButton();
 
                 $("button").click(function(buttonType) {
-                    console.log(buttonType.target);
+                    // console.log(buttonType.target);
                     randColour();
                     // return true;
                 })
@@ -100,7 +100,7 @@
 
                 setInterval(function(){
                 if(runRandomInput){
-                    var newPlaceholder = randomizeInput();
+                    var newPlaceholder = selectFromBLNS();
                     n++;
                     $('input.text_input').attr('value',newPlaceholder);
                 }
