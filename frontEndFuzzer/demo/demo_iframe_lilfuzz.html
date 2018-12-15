@@ -4,8 +4,7 @@
         <title> LilFuzz </title>
         <link rel="icon" href="../monkey_logo.png">
         <link href="https://fonts.googleapis.com/css?family=Arimo|Poppins" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
         <script type="text/javascript" src="demo_iframe.js"> </script>
         <script src="lilFuzz.js"></script>
         <style>
@@ -60,7 +59,6 @@
     </head>
 
     <body> 
-    
         <h1>Sample Website</h1>
         <h2>Visualizing the Fuzzer Experience</h2>
         <form>
@@ -69,83 +67,77 @@
             <input class="second_button" type="radio" name="group" /> Second Filter <br/>
             <button class = "change_colour" type="button"> Change Colour </button>
         </form>
-
-
-        
-
-
-
-        
+ 
     </body>
 
     <script>
+        
+        // VISUALIZE THE FUZZING 
+        $(document).ready(function(){
+            randTextInput(); 
+            randRadioButton();
+            randClassicButton();
 
-            $(document).ready(function(){
-                randTextInput(); 
-                randRadioButton();
-                randClassicButton();
+            
+            $("button").click(function(buttonType) {
+                // console.log(buttonType.target);
+                randColour();
+            })
+            
+        });
 
-                $("button").click(function(buttonType) {
-                    // console.log(buttonType.target);
-                    randColour();
-                    // return true;
-                })
-              
+        function randTextInput() {
+            // RANDOMIZE TEXT FIELD INPUT 
+            var n=0;
+            var runRandomInput = true;
+
+            setInterval(function(){
+            if(runRandomInput){
+                var newPlaceholder = selectFromBLNS();
+                n++;
+                $('input.text_input').attr('value',newPlaceholder);
+            }
+            },2000);
+        }
+
+        function randRadioButton() {
+            // RANDOMIZE RADIO BUTTONS SELECTION
+            var radioButtons = collectAllButtons("radio");
+            var runRadioSelect = true;
+            
+            setInterval(function() {
+                if (runRadioSelect) {
+                    var currRadioButton = randomItemFrom(radioButtons);
+                    $(currRadioButton).prop('checked', true);
+                }
+            
+            },1000);
+        }
+
+        function randClassicButton() {
+            var classicButtons = collectAllButtons("classic");
+            // console.log(classicButtons);
+        }
+        function randColour() {
+            // WHEN THE BUTTON IS CLICKED, CHANGE BUTTON COLOUR
+            var currColour = generateHexCode();
+            var changeColour = true;
+
+            // var currColour = generateHexCode();
+            $("button").css({
+                'background-color' : currColour,
             });
 
-            function randTextInput() {
-                // RANDOMIZE TEXT FIELD INPUT 
-                var n=0;
-                var runRandomInput = true;
-
-                setInterval(function(){
-                if(runRandomInput){
-                    var newPlaceholder = selectFromBLNS();
-                    n++;
-                    $('input.text_input').attr('value',newPlaceholder);
-                }
-                },2000);
-            }
-
-            function randRadioButton() {
-                // RANDOMIZE RADIO BUTTONS SELECTION
-                var radioButtons = collectAllButtons("radio");
-                var runRadioSelect = true;
-                
-                setInterval(function() {
-                    if (runRadioSelect) {
-                        var currRadioButton = randomItemFrom(radioButtons);
-                        $(currRadioButton).prop('checked', true);
-                    }
-                
-                },1000);
-            }
-
-            function randClassicButton() {
-                var classicButtons = collectAllButtons("classic");
-                // console.log(classicButtons);
-            }
-            function randColour() {
-                // WHEN THE BUTTON IS CLICKED, CHANGE BUTTON COLOUR
-                var currColour = generateHexCode();
-                var changeColour = true;
-
-                // var currColour = generateHexCode();
-                $("button").css({
-                    'background-color' : currColour,
-                });
-
-                // Automate the colour change
-                    // setInterval(function() {
-                    //     if (changeColour) {
-                    //         var currColour = generateHexCode();
-                    //         $("button").css({
-                    //             'background-color' : currColour,
-                    //         });
-                    //     }
-                    // });
-            }
+            // Automate the colour change
+                // setInterval(function() {
+                //     if (changeColour) {
+                //         var currColour = generateHexCode();
+                //         $("button").css({
+                //             'background-color' : currColour,
+                //         });
+                //     }
+                // });
+        }
  
-
-        </script>
+    </script>
 </html>
