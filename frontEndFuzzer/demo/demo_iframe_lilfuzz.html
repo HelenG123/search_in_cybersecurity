@@ -78,6 +78,12 @@
             randTextInput(); 
             randRadioButton();
             randClassicButton();
+
+            $("button").click(function(buttonType) {
+                // console.log(buttonType.target);
+                randColour();
+            })
+
             
         });
 
