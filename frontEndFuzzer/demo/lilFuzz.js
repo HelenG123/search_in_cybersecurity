@@ -84,7 +84,7 @@ function collectAllButtons(buttonType) {
                 classicButtons.push(buttons[i]);
             }
         }
-        console.log(classicButtons);
+        // console.log(classicButtons);
         return classicButtons;
     }
     if (buttonType == "radio") {
