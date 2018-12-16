@@ -65,9 +65,7 @@
             <input class="text_input" id="inputField" type="text" value="Placeholder"/> <br/>
             <input class="first_button" type="radio" name="group" /> First Filter
             <input class="second_button" type="radio" name="group" /> Second Filter <br/>
-            <div>
-                    <button class = "change_colour" type="button"> Change Colour </button>
-            </div>
+            <button class = "change_colour" type="button"> Change Colour </button>
             
         </form>
  
@@ -80,12 +78,6 @@
             randTextInput(); 
             randRadioButton();
             randClassicButton();
-
-            
-            $("div").click(function(buttonType) {
-                // console.log(buttonType.target);
-                randColour();
-            })
             
         });
 
@@ -110,7 +102,7 @@
             
             setInterval(function() {
                 if (runRadioSelect) {
-                    var currRadioButton = randomItemFrom(radioButtons);
+                    var currRadioButton = randomItemFromArr(radioButtons);
                     $(currRadioButton).prop('checked', true);
                 }
             
@@ -118,8 +110,17 @@
         }
 
         function randClassicButton() {
+            // RANDOMIZE OTHER BUTTON SELECTION
             var classicButtons = collectAllButtons("classic");
-            // console.log(classicButtons);
+
+            setInterval(function() {
+                var click = randBoolean();
+                if (click) {
+                    $("button").click(randColour());
+                }
+            
+            },3000);
+            
         }
         function randColour() {
             // WHEN THE BUTTON IS CLICKED, CHANGE BUTTON COLOUR
