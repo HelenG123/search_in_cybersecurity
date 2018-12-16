@@ -67,6 +67,7 @@ function randomDropDownSelect() {
 }
 
 function randBoolean() {
+    // Return either 1 or 0 randomly
     return Math.round(Math.random()); 
 }
 
